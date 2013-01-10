@@ -1,0 +1,170 @@
+.carousell {
+  height: auto;
+  border : 0px solid #000;
+  position : relative;
+  overflow : hidden;
+}
+ 
+.carousell a {
+  color : #363F53;
+  text-decoration:none;
+}
+
+.carousell li div {
+    font-size:1.0em;  
+}  
+
+.carousell-id {
+    text-align : center;
+    height : 18px;
+    color : #FFF;
+    float : left;
+    text-decoration:none; 
+}
+
+.carousell-id a {
+  cursor : pointer;
+  color : #FFF;
+  text-decoration : none;
+}
+
+.carousell-id a:hover {
+  text-decoration : underline;
+}
+
+.carousell-item-title {
+  color : #333;
+  font-size:1.2em;
+  height: 1.5em;
+}
+
+.carousell a:hover {
+  text-decoration : underline;
+}
+
+.carousell-control {
+  z-index: 9900;
+  position:absolute;
+}
+
+.carousell-control img {
+  height : 55px;
+  width : 45px;
+}
+
+.carousell-control img:hover {
+  height : 50px;
+  width : 50px;
+}
+
+.carousell-left {
+  left :0px;
+}
+
+.carousell-right {
+  right :0px;
+}
+  
+.carousell-item {
+  float : left;
+  z-index : 2;
+  background : #FFF;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7x;
+  -opera-border-radius: 7px;
+  border-radius: 7px;
+  border : 0;
+  overflow : hidden;
+}
+
+.carousell-content {  
+  font-size:.8em;
+  z-index :1;
+  position : relative;
+  overflow : hidden;
+}
+
+.carousell-content-scroller  {
+  z-index :1;    
+  position : absolute;
+  overflow-x:hidden;
+  overflow-y:hidden;     
+}
+
+.carousell-item-content {
+  height : 65px;
+  overflow : hidden;    
+}
+
+.carousell-nav {    
+    display:none;        
+    height : 25px;
+}
+
+.carousell-mid {
+    margin-left : auto;
+    margin-right : auto;
+    height : 1.5em;
+}
+
+.carousell-item-selected {
+  background : #99D481;
+}
+
+.carousell-item-content {
+    padding:0 0.5em;
+    position:relative;
+    top:5px;
+}
+
+.carousell-title {
+    padding:0 0.5em;
+    font-size:12px;
+    position:relative;
+}
+
+.carousell-id {
+    width : 15px;
+    height : 20px;
+    margin-left : 3px;
+    margin-right : 3px;
+    padding-left : 2px;
+    padding-right : 2px;
+    cursor : pointer;
+}
+
+/*carousell themes*/
+.carousell-theme {
+    font-family: Arial,sans-serif;
+    background: #fff;
+    border: 0;
+    padding:5px;
+}
+
+.carousell-item-theme {
+    border: 1px solid #333 !important;
+    background:#fff;
+    position:relative;
+}
+
+.carousell-title-theme {
+    color:#fff;
+}
+
+.carousell-title-theme a:link, .carousell-title-theme a:visited {
+    color: #333;
+}
+
+.carousell-id-theme {
+    background:#333;
+    border: 1px solid #000 !important;
+	-moz-border-radius: 7px;
+  -webkit-border-radius: 7x;
+  -opera-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.carousell-id-selected-theme {
+    color:#333;
+    background : #FFF;
+}

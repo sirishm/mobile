@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <title>Working with jQuery Mobile 1.2.0</title>
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+            <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+            <script>
+                $(document).on("mobileinit", function() {
+                               $.mobile.loader.prototype.options.text = "Please wait...";
+                               $.mobile.loader.prototype.options.textVisible = true;
+                               $.mobile.loader.prototype.options.theme = "e";
+                               });
+                </script>
+            <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+            <script>
+                $(document).on("pageinit", function() {
+                               $("#helloPopup").on("popupbeforeposition popupafteropen popupafterclose", function(event) {
+                                                   alert(event.type);
+                                                   });
+                               $("#imagePopupLink").click(function() {
+                                                          $("#imagePopup").popup("open", {positionTo: "window"});
+                                                          });
+                               $("#loadingLink").click(function() {
+                                                       $.mobile.loading("show", {
+                                                                        theme: "b",
+                                                                        text: "Different message...",
+                                                                        textVisible: true
+                                                                        });
+                                                       setTimeout(function() { $.mobile.loading("hide"); }, 1500);
+                                                       });
+                               });
+                $(document).on("pageshow", function() {
+                               $.mobile.loading("show");
+                               setTimeout(function() { $.mobile.loading("hide"); }, 1500);
+                               });
+                </script>
+            </head>
+    <body>
+        <div data-role="page" id="examplePage">
+            <header data-role="header">
+                <h1>ROSSIO     SQUARE</h1>
+            </header>
+            <div data-role="content" role="main">
+                <p>
+                
+                Find all your favorite stores here
+                
+                </p>
+                <div data-role="collapsible-set">
+                    
+                    <div data-role="collapsible">
+                        <h3>See the list</h3>
+                        
+                        <ul data-role="listview" data-autodividers="true" data-inset="true">
+                            <li><a href="http://www.buildmobile.com/author/aderosa/">Abercrombie</a></li>
+                            <li><a href="http://www.buildmobile.com">Apple</a></li>
+                            <li><a href="http://www.jspro.com">Bebe</a></li>
+                            <li><a href="http://www.phpmaster.com">Macys</a></li>
+                            <li><a href="http://www.sitepoint.com">SitePoint.com</a></li>
+                        </ul>
+                    </div>
+                
+                </div>
+            </div>
+            <div data-role="popup" id="helloPopup">
+                <header data-role="header">
+                    <h1>Popup</h1>
+                </header>
+                <div data-role="content">
+                    <p>Hello! I'm a brand new popup widget.</p>
+                    <a href="#" title="Go back" data-role="button" data-rel="back">Close</a>
+                </div>
+            </div>
+            <div data-role="popup" id="imagePopup">
+                <a href="#" data-rel="back" data-role="button" data-icon="delete"
+                    data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div data-role="content">
+                    <img src="http://cdn.buildmobile.com/wp-content/themes/buildmobile-v1/images/logo.png" alt="BuildMobile logo" />
+                </div>
+            </div>
+            <footer data-role="footer">
+                <h3>ROSSIO     SQUARE</h3>
+            </footer>
+        </div>
+    </body>
+</html>
