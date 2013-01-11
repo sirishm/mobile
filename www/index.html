@@ -7,6 +7,7 @@
         <script src="js/jquery.1.3.2.min.js"></script>
         <script src="js/jquery.mobile-1.0a2.js" type="application/x-javascript" charset="utf-8"></script>			
         <script src="js/carousel.js"></script>
+        <script src="js/search.js"></script>
 		<script src="js/carousell.js"></script>
         <title>jQuery Mobile Carousel Widget Demo</title>
 		
@@ -14,85 +15,108 @@
        										
     </head>
     <body>
-      <div id="logo" style="width:1000px;"> <img src="images/RossioLogo.jpg" width="800" height="300"></> </div>
+      
             
+        <!-- --- from original desktop version -->
+        
+        
+        <div id="suggest"></div> 
+        <div id="header" align="right">
+            <div class='hdr'>
             
-            <!---    FIRST ONE -->
-            
-            <div data-role="page" id="main_page" data-theme="b">
-                <div data-role="content" >	
-                    <div id="content" style="height:100%;width:300px;">                    					
-                        <div style="height:100%;width:300px;">
+                <div id="main_srch">
+                    <form id="srch_div">
+                        <span id='srch_txt'>
+                            <input id='q' type='text' name='q' class='srch_bar' autocomplete='off' />
+                            <img id="srch_clr" src="assets/image/close_btn.png" />
+                        </span>
+                        <input type="button" value='search' onclick="searchForm()" />
+                    </form>
+                </div>
+            </div>
+            <div style='clear:both'></div>
+        </div>
+        
+        <div id="content1" align="right">
+    
+            <div id="main">
+                <div id="left">
+                    <div class="list_inner">
+                        <div id="listing">
+                            <!-- store list -->
+                        </div>
+                        
+                        <div id="filterby">
+                            <div id="cats"></div>
+                            <div class='filter_opt'>
+                                <b>for:</b>&nbsp;
+                                <select id="cat_refine" size=1 style='font:8.5pt verdana'>
+                                    <option value="">-all categories-</option>
+                                    <option value="women">women</option>
+                                    <option value="men">men</option>
+                                    <option value="junior">juniors</option>
+                                    <option value="kid">kids</option>
+                                    <option value="jewelry">jewelry</option>
+                                    <option value="beauty">beauty</option>
+                                    <option value="homegood">home goods</option>
+                                </select>
+                            </div> 
                             
-                            <!-- start carousel widget html 
+                            <div class="filter_opt">
+                                
+                                <select id="sort_refine" style='font:8.5pt verdana'>
+                                    <option value="">relevance</option>
+                                    <option value="saleprice desc">price:high to low</option>
+                                    <option value="saleprice asc">Price:low to high</option>
+                                </select>
+                            </div>
                             
-                            <div style="height:460px;width:1000px;">
-                                <div  id="carousell" class="carousell">							
-                                    <div id="carousell_scrollpanel" class="carousell-content">
-                                        <div id="carousell_content" class="carousell-content-scroller"> </div>
-                                    </div>
-                                    
-                                    <div id="carousell_nav" class="carousell-nav">
-                                        <div id="carousell_mid" class="carousell-mid"></div>
-                                    </div> 
-                                </div>
-                            </div><!-- end carousel widget html -->
-                            
-                             
-                          
-                            <!-- template used for the carousel items -->
-                            <div id="carousell_template" style="display:none">
-                                <div class="carousell-item">
-                                    <div style="height:1.5em;font-size:1.5em;padding-bottom:30px;">@{title}</div>
-                                    <div id="carousell_item_@{id}" > 
-                                        
-                                    <div style="float:left;width:100%"> <img src="@{image}"/></div> 
-                                    </div>
-                                    
-                                </div>
+                            <div class="filter_opt">
+                                <b>price:</b>&nbsp;
+                                <input id="splo" name="splo" type="text" value="-lo price-" size=7 />
+                                <b>&nbsp;</b>
+                                <input id="sphi" name="sphi" type="text" value="-hi price-" size=7 />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="bar">&nbsp;</div>
+                
+                <div id="right">
+                    <div class="main_inner">
+                        
+                        <div id="info_hdr">
+                            <div id="info">
+                            </div>	<!-- info -->						
+                        </div>  <!-- info_hdr -->
+                        
+                        <div id="rslt">
+                            <div id="paginate">
+                                <!-- paginate -->
                             </div>
                             
                             
-                           
-                            <script>
-                                var carousell = new $.widgets.Carousell( {
-                                                                      uuid : "carousell",
-                                                                      args : { "scrollInterval" : 600,"itemWidth":290
-                                                                      },
-                                                                      value : [
-                                                                               { "title" : "Tron.Legacy",
-                                                                               "image" : "images/1.jpg",
-                                                                               "href" : "Men.html"
-                                                                               },
-                                                                               { "title" : "Women",
-                                                                               "image" : "images/women_shopping.jpg"
-                                                                               },
-                                                                               { "title" : "The Chronicles of Narnia: The Voyage of the Dawn Treader",
-                                                                               "image" : "images/3.jpg"
-                                                                               },
-                                                                               { "title" : "The Fighter",
-                                                                               "image" : "images/4.jpg"
-                                                                               },
-                                                                               { "title" : "Tangled",
-                                                                               "image" : "images/5.jpg"
-                                                                               }
-                                                                               ]
-                                                                      });					  
-                                </script>
-                             
-                            <!-- end item template -->	
-                       <!-- </div>  content -->
+                        </div> <!-- rslt -->
                         
-                        <!--
-                    </div>
-                    
-                </div>
-               
-                
-
-            -->    
-        <div data-role="page" id="main_page2" data-theme="b">
-			<div data-role="content" >
+                    </div>  <!-- main_inner -->
+                </div> <!-- right -->
+            </div>
+            <div style="clear:both"></div>	
+            
+        </div>
+        
+        <script>$('#header').css('background-color','black'); $('#content1').css('background-color','black'); $('body').css('background-color','black'); </script>
+        
+        <!-- ===============  --> 
+        
+         <div id="logo" align = "justify" style="width:1000px;"> <img src="images/RossioLogo.jpg" width="800" height="300"> </div> 
+        
+        <div id="bar1">&nbsp;</div>
+        <div id="bar2">&nbsp;</div>
+        
+            <div data-role="page" id="main_page2" data-theme="b"> 
+			<div data-role="content" > 
                          
 				<div id="content" style="height:100%;width:300px;">                    					
 					<div style="height:100%;width:300px;"> 
@@ -122,6 +146,9 @@
                                 
                             </div>
                         </div>
+                        
+                        
+                        
                         
                         <script>
                             var carousel = new $.widgets.Carousel( {
