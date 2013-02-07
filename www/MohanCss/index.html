@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<!-- HEAD SECTION -->
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Rossio Square</title>
+	<meta name="description" content="Discover best deals for apparel, home goods and furnishings!">
+	<meta name="keywords" content="men, women, juniors, kids, apparel, home goods, furnishings">
+
+	<link href='http://fonts.googleapis.com/css?family=Anton|Ubuntu' rel='stylesheet' type='text/css'>
+	
+    <link type="text/css" rel="stylesheet" href="assets/css/reset.css" />				
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css" />			
+    <link type="text/css" rel="stylesheet" href="assets/css/rcarousel.css" />
+	<link type="text/css" rel="stylesheet" href="assets/css/test.css" />
+
+	<link href="/assets/css/application.css" media="all" rel="stylesheet" type="text/css" />
+	<script src="/assets/js/application.js" type="text/javascript"></script>
+
+	<!--FAVICON--> 
+	<link rel="shortcut icon" href="/assets/images/favicon.png" />
+</head>
+
+<!-- HEADER SECTION OF THE HTML-->
+<header class="index_header">
+	<div class="body">
+		<!-- ROSSIO LOGO IN THE TOP HEADER-->
+		<a href="http://www.rossiosquare.com/">
+		<div class="logo">
+		<h1>RossioSquare</h1>, Helping People Discover Best Deals for Apparel, Home Goods and Furnishings.
+		</div>
+		</a>	
+
+		<!-- SEARCH BAR IN THE TOP HEADER-->
+		
+		<div class="search_bar">
+			<form accept-charset="UTF-8" action="/results" method="get" multiple="multiple">	
+				<div style="margin:0;padding:0;display:inline">
+					<input name="utf8" type="hidden" value="&#x2713;" />
+				</div>
+				<input class="search_box" id="keyword" name="keyword" placeholder="Search for deals" type="text" />
+
+			</form>		
+
+		<!-- ALLOWS ROSSIO TO SHOW ANY RANDOM DEAL-->
+		<div class="or">or
+		</div>
+		<a href="/surprise_me">
+		<div class="surprise_me">
+			Surprise Me!
+		</div>
+		</a>	
+		</div>	
+	
+		<!-- USER SIGNUP/LOGIN SECTION IN TOP HEADER-->
+		<div class="login_profile">
+			<a href="#">
+				<div class="login">
+				Login
+				</div>
+			</a>
+			<a href="/users/sign_up">
+				<div class="top_signup">
+				Sign Up!
+				</div>
+			</a>	
+		</div>
+
+		</div>
+		<fieldset class="login_popup">
+			<div class="login_section">
+				<form accept-charset="UTF-8" action="/users/login" method="post">
+					<div style="margin:0;padding:0;display:inline">
+						<input name="utf8" type="hidden" value="&#x2713;" />
+					</div>
+					<input id="user_login" name="user[login]" placeholder="email address" size="30" type="text" />
+					<input id="user_password" name="user[password]" placeholder="password" size="30" type="password" />
+					<input name="user[remember_me]" type="hidden" value="0" />
+					<input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" /> <label for="user_remember_me">Remember me</label><br />
+
+					<a href="/users/password/new">Forgot your password?</a><br /><br />
+					<input class="login_button" name="commit" type="submit" value="Login" />
+				</form>		
+			</div>
+
+			<!-- LOGIN USING SOCIAL MEDIA-->
+			<div class="social_media">
+				<p>Or if you signed up with these:</p>			
+				<a href="/users/auth/facebook">
+					<div class="facebook">
+						<img alt="Facebook_login" src="/assets/images/facebook_login.png" />Login with Facebook
+					</div>
+				</a>
+				
+				<!-- ADD IN FUTURE
+				<a href="/users/auth/google_oauth2">
+					<div class="google"><img alt="Google_login" src="/assets/images/google_login-image.png" />Login with Google
+					</div>
+				</a>
+				--> 
+			</div>
+		</fieldset>
+	</div>
+</header>
+
+<!-- BODY OF THE HTML PAGE-->
+<body>
+	<div id="fb-root">
+	</div>
+	<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) 
+				return;
+			js = d.createElement(s); 
+			js.id = id;
+  			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=421415971239715";
+  			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<script src="/assets/jquery.tools.js" type="text/javascript">
+	</script>
+	
+	<div class="clear">
+	
+
+	<div id="content">
+			<!-- For Ashish/Sirish. Data needs to be dynamically generated
+			The goal is to have retailers bid for real estate here. However, in the begining, we will be just showing hand picked and interesting deals 
+			1. Deal URL (example:http://www1.macys.com/shop/product/onyx-dress-strapless-lace-sequin-cocktail-dress?ID=749686)
+			2. Name of Store (example: Macys etc)
+			3. Description of Item (example: Armani Junior Boys' Rugby Striped Polo)
+			4. Original Price (example: Was $125)
+			5. Current Price (example: Now $100)
+			6. Savings (example: $25)
+			-->			
+			<div id="container">
+				<div id="carousel">
+					<div id="slide01" class="slide">
+						<img src="assets/images/Carousel-Sample-Image1.png" alt="Deal 1" />
+						<div class="text">
+							<h1>Macy's</h1><br>
+							<h2>Women's Onyx Dress, Strapless Lace Sequin Cocktail Dress</h2><br>
+							<p>Was $125, Now $75</p>
+						</div>
+					</div>
+					
+					<div id="slide02" class="slide">
+						<img src="assets/images/Carousel-Sample-Image2.png" alt="Deal 2" />
+						<div class="text">
+							<h1>Bloomingdale's</h1><br>
+							<h2>Women's business suit</h2><br>
+							<p>Was $325, Now $250</p>
+						</div>
+					</div>
+					
+					<div id="slide03" class="slide">
+						<img src="assets/images/Carousel-Sample-Image3.png" alt="horizontal and vertical carousel" />
+						<div class="text">
+							<h1>Nordstrom's</h1><br>
+							<h2>Women's party dress</h2><br>
+							<p>Was $250, Now $150</p>
+						</div>
+					</div>
+					
+					<div id="slide04" class="slide">
+						<img src="assets/images/Carousel-Sample-Image4.png" alt="multi carousels" />
+						<div class="text">
+							<h1>Von Maur</h1><br>
+							<h2>Women's pleated skirt</h2><br>
+							<p>Was $125, Now $50</p>
+						</div>
+					</div>				
+				</div>
+				<a href="#" id="ui-carousel-next"><span>next</span></a>
+				<a href="#" id="ui-carousel-prev"><span>prev</span></a>
+				<div id="pages"></div>
+			</div>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+
+	<div class="see_all_deals">
+		<h2>Make smart decisions about where you shop<br />
+		<h2>Find the best deals
+		<a href="/search">
+		<div class="see_all">
+			<div class="text">&nbsp; See All Deals
+			</div>
+			<div class="arrowhead">
+			</div>
+		</div>
+		</a>	
+		</h2>
+	</div>
+
+<div class="categories">
+	<h3><img alt="categories" src="/assets/images/list.png" />Categories</h3>
+
+	<section id="content">
+	    <section class="posters">
+	      <div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Women</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">10,126</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">50</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 10,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Men</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">21,324</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">49</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 20,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Juniors</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">11,864</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">49</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 27,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Kids</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">17,863</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">23</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 12,022 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Home Furnishings</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">17,864</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">49</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 67,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Best Deals</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">3,864</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">49</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 17,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Latest Deals</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">1,134</em> <i>Deals</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">49</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>$ 43,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	      	<div class="poster listings ">
+	  		  <h2 id="ts__poster_listings_header">Coupons</h2>
+	        	<ul class="full-listings">
+	          	<li>      
+	            	<span id="deals_by_category" data-transform="a" class="total-deals-category">
+	                <em class="deals-by-category-count">100</em> <i>Coupons</i>
+	            	</span>
+	          	</li>
+		        <li>
+	            	<span id="stores_by_category" data-transform="a" class="total-stores-category">
+	                <em class="stores-by-category-count">49</em> <i>Stores</i>
+	            	</span>
+	          	</li>
+		     	<li>
+	            	<span id="savings_by_category" data-transform="a" class="total-savings-category">
+	                <em class="savings-by-category-count"></em>
+	                <i>Over $100,000 Savings</i>
+	            	</span>
+	          	</li>
+	        	</ul>
+	      	</div>
+
+	    </section>
+  </section>
+</div>
+
+<script type="text/javascript" src="assets/lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="assets/lib/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="assets/lib/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="assets/lib/jquery.ui.rcarousel.min.js"></script>
+<script type="text/javascript" src="assets/js/carousel.js"></script>
+
+</body>
+
+<!-- FOOTER SECTION-->
+<footer>
+	<div class="footer">
+		<div class="first">
+			<div class="signup_container">
+				<form accept-charset="UTF-8" action="/email_signups" method="post">
+					<div style="margin:0;padding:0;display:inline">
+						<input name="utf8" type="hidden" value="&#x2713;" />
+					</div>
+					<input class="email_address" id="email" name="email" placeholder="Email Address" type="text" />
+					<input class="email_signup_submit" name="commit" type="submit" value="Newsletter" />
+				</form>
+				<div class="clear">
+				</div>
+			</div>
+			<div class="links">
+				<a href="/aboutus.html">
+					<div class="about_us"><img alt="About_us" src="/assets/images/about_us_blue.png" />About Us
+					</div>
+				</a>
+				<a href="mailto:contactus@rossiolabs.com">
+					<div class="contact_us">
+						<img alt="contact_us" src="/assets/images/contact_us.gif" />Contact Us
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<!-- SECTION WHERE WE SHOW SOCIAL MEDIA STATS-->
+		<!-- Needs Updating with correct Facebook URL-->
+		<div class="second">
+			<div class="fb-like" data-href="https://www.facebook.com/RossioSquare" data-send="false" data-width="320" data-show-faces="false" data-font="lucida grande">
+			</div>
+			<div class="copyright">
+				Copyright 2012  -  All Rights Reserved
+			</div>
+		</div>
+		<div class="clear">
+		</div>
+	</div>
+</footer>
+</html>
